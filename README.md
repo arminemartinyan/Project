@@ -3,19 +3,18 @@
 A personal finance engine that indexes the same transaction data in **three different data structures simultaneously**, demonstrating when and why to reach for each one.
 
 ## Features
-
-- ✅ Transaction record: `ID`, `date`, `amount`, `category`, `merchant`, `note`
-- ✅ **HashMap** indexed by category → O(1) average category-total lookup and per-category listing
-- ✅ **AVL Tree** indexed by date → O(log n + k) date-range queries (handles duplicate dates)
-- ✅ **MaxHeap** indexed by amount → O(log n) insert/delete, O(n log n) top-N surfacing
-- ✅ All three structures stay **synchronized** on every `add` and `delete`
-- ✅ Commands: `add-transaction`, `delete`, `range`, `category-summary`, `top-spending`, `monthly-report`
-- ✅ Load historical data from CSV (≥ 300 records); export filtered results back to CSV
-- ✅ Edge cases: same-date transactions, deleting a transaction in the heap's top-N, category with zero transactions
-- ✅ Full complexity analysis: `docs/complexity.md`
-- ✅ Hand-traced correctness verification: `docs/manual_trace.md`
-- ✅ **BONUS** — Budget-limit feature: set a monthly cap per category with ≥ 80% usage warnings
-- ✅ **BONUS** — Visual monthly breakdown (bar chart rendered in the terminal)
+ Transaction record: `ID`, `date`, `amount`, `category`, `merchant`, `note`
+**HashMap** indexed by category → O(1) average category-total lookup and per-category listing
+**AVL Tree** indexed by date → O(log n + k) date-range queries (handles duplicate dates)
+**MaxHeap** indexed by amount → O(log n) insert/delete, O(n log n) top-N surfacing
+ All three structures stay **synchronized** on every `add` and `delete`
+ Commands: `add-transaction`, `delete`, `range`, `category-summary`, `top-spending`, `monthly-report`
+ Load historical data from CSV (≥ 300 records); export filtered results back to CSV
+ Edge cases: same-date transactions, deleting a transaction in the heap's top-N, category with zero transactions
+ Full complexity analysis: `docs/complexity.md`
+ Hand-traced correctness verification: `docs/manual_trace.md`
+ **BONUS** — Budget-limit feature: set a monthly cap per category with ≥ 80% usage warnings
+ **BONUS** — Visual monthly breakdown (bar chart rendered in the terminal)
 
 ## Data Structures
 
